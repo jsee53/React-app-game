@@ -1,14 +1,33 @@
+import { useState } from "react";
 import "./App.css";
+import GuGuDan from "./GuGuDan";
 
 function App() {
+  const [gameButton, SetGameButton] = useState();
   return (
     <div className="App">
-      <div>
-        <form action="">
-          <input type="number" placeholder="정답 입력:" />
-          <button>제출</button>
-        </form>
-      </div>
+      <button
+        onClick={() => {
+          SetGameButton(1);
+        }}
+      >
+        구구단
+      </button>
+      <button
+        onClick={() => {
+          SetGameButton(2);
+        }}
+      >
+        숫자야구
+      </button>
+      <button
+        onClick={() => {
+          SetGameButton(3);
+        }}
+      >
+        지뢰찾기
+      </button>
+      {gameButton == 1 ? <GuGuDan /> : null}
     </div>
   );
 }
