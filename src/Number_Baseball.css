@@ -1,0 +1,57 @@
+.gameStart:hover {
+  background-color: beige;
+}
+
+.gradtext {
+  background: linear-gradient(
+    to right bottom,
+    #002fff,
+    #09ff00,
+    #ffe100,
+    #ff0000
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.gameTable {
+  margin: auto;
+  margin-top: 50px;
+  border: 2px solid aquamarine;
+  border-collapse: collapse;
+}
+
+.gameTable td {
+  border: 1px solid aquamarine;
+  width: 140px;
+  text-align: center;
+  color: blueviolet;
+}
+
+.input {
+  text-align: center;
+}
+
+.text {
+  width: 90px;
+  border: 2px solid aquamarine;
+}
+
+.text::placeholder {
+  color: blueviolet;
+}
+
+.resultButton {
+  margin-top: 10px;
+  width: 70px;
+  cursor: pointer;
+  background-color: aquamarine;
+  border: none;
+  color: blueviolet;
+}
+
+.resultButton:hover {
+  background-color: beige;
+}
