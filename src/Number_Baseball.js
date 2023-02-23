@@ -3,7 +3,7 @@ import "./Number_Baseball.css";
 
 function Number_Baseball() {
   return (
-    <div className="GuGuDan">
+    <div className="Number_Baseball">
       <div>숫자야구</div>
     </div>
   );

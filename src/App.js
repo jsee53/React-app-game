@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import GuGuDan from "./GuGuDan";
+import Number_Baseball from "./Number_Baseball";
+import Minesweeper from "./Minesweeper";
 
 function App() {
-  const [gameButton, SetGameButton] = useState();
+  const [gameButton, SetGameButton] = useState(null);
   return (
     <div className="App">
       <button
@@ -27,9 +29,20 @@ function App() {
       >
         지뢰찾기
       </button>
-      {gameButton == 1 ? <GuGuDan /> : null}
+      {selectGame(gameButton)}
     </div>
   );
+}
+
+function selectGame(gameButton) {
+  switch (gameButton) {
+    case 1:
+      return <GuGuDan />;
+    case 2:
+      return <Number_Baseball />;
+    case 3:
+      return <Minesweeper />;
+  }
 }
 
 export default App;
