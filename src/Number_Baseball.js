@@ -2,10 +2,20 @@ import { useState } from "react";
 import "./Number_Baseball.css";
 
 function Number_Baseball() {
+  const [correctNum, SetCorrectNum] = useState(Math.ceil(Math.random() * 9000));
   const [answer, SetAnswer] = useState();
+  const [strike, SetStrike] = useState();
+  const [ball, SetBall] = useState();
 
   const ansCheck = (e) => {
     SetAnswer(e.target.value);
+    if (answer > 1000 && answer < 10000) {
+      const digits = [];
+      digits[0] = Math.floor(answer / 1000); //천의 자리 숫자
+      digits[1] = Math.floor((answer % 1000) / 100); //백의 자리 숫자
+      digits[2] = Math.floor((answer % 100) / 10); //십의 자리 숫자
+      digits[3] = answer % 10; //일의 자리 숫자
+    }
   };
 
   return (
