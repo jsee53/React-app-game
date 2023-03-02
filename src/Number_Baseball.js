@@ -72,46 +72,6 @@ function Number_Baseball() {
             <td></td>
             <td></td>
           </tr>
-          <tr>
-            <td>2회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>3회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>4회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>5회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>6회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>7회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>8회</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>9회</td>
-            <td></td>
-            <td></td>
-          </tr>
         </table>
       </div>
 
@@ -128,11 +88,13 @@ function Number_Baseball() {
             onblur="this.placeholder='ex) 1234'"
           />
           <button
-            class="gameButton"
+            class="resultButton"
             onClick={() => {
               SetSubmitAnswer(true);
             }}
-          ></button>
+          >
+            제출
+          </button>
         </form>
       </div>
       {answer}

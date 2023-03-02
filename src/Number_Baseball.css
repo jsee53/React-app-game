@@ -45,7 +45,9 @@
 
 .resultButton {
   margin-top: 10px;
+  margin-left: 5px;
   width: 70px;
+  height: 21px;
   cursor: pointer;
   background-color: aquamarine;
   border: none;
