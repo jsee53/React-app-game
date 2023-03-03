@@ -24,11 +24,22 @@ function Number_Baseball() {
   const [answer, SetAnswer] = useState();
   const [strike, SetStrike] = useState(0);
   const [ball, SetBall] = useState(0);
-
+  const [text, SetText] = useState("ex) 1234");
   const [submitAnswer, SetSubmitAnswer] = useState(false);
 
   const ansCheck = (e) => {
     SetAnswer(e.target.value);
+    SetSubmitAnswer(false);
+  };
+
+  const reset = (e) => {
+    SetText("ex) 1234");
+    SetSubmitAnswer(true);
+    SetStrike(0);
+    SetBall(0);
+  };
+
+  const showResult = (e) => {
     if (answer > 1000 && answer < 10000) {
       //입력값이 들어왔을 때
       const digits = [];
@@ -53,51 +64,60 @@ function Number_Baseball() {
           }
         }
       }
-      SetSubmitAnswer(false);
     }
+
+    return (
+      <div>
+        {true ? (
+          <div>
+            strike: {strike}
+            <br></br>ball: {ball}
+            <br></br>정답 :{correctNum}
+            <br></br>제출한답 :{answer}
+          </div>
+        ) : null}
+      </div>
+    );
   };
 
   return (
     <div className="Number_Baseball">
-      <div class="title">
-        <span class="gradtext">숫자야구</span>
-        {submitAnswer ? <div>{strike}</div> : null}
+      <div className="title">
+        <span className="gradtext">숫자야구</span>
 
-        <table class="gameTable" id="gameTable">
-          <tr>
-            <td colspan="3">SCORE</td>
-          </tr>
-          <tr>
-            <td>1회</td>
-            <td></td>
-            <td></td>
-          </tr>
+        <table className="gameTable" id="gameTable">
+          <tbody>
+            <tr>
+              <td colSpan="3">SCORE</td>
+            </tr>
+            <tr>
+              <td>1회</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
-      <div class="input">
+      <div className="input">
         <h4>서로 다른 네 자리 숫자를 입력하세요. (0은 제외)</h4>
-        <form id="form">
-          <input
-            class="text"
-            id="inputNumber"
-            onChange={ansCheck}
-            type="number"
-            placeholder="ex) 1234"
-            onfocus="this.placeholder=''"
-            onblur="this.placeholder='ex) 1234'"
-          />
-          <button
-            class="resultButton"
-            onClick={() => {
-              SetSubmitAnswer(true);
-            }}
-          >
-            제출
-          </button>
-        </form>
+        <input
+          className="text"
+          id="inputNumber"
+          onChange={ansCheck}
+          type="number"
+          placeholder={text}
+        />
+        <button
+          className="resultButton"
+          onClick={() => {
+            SetSubmitAnswer(true);
+          }}
+        >
+          제출
+        </button>
       </div>
-      {answer}
+      {submitAnswer ? showResult() : null}
     </div>
   );
 }
